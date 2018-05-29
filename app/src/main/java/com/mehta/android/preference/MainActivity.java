@@ -2,6 +2,7 @@ package com.mehta.android.preference;
 
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -25,18 +26,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txtPassword = findViewById(R.id.txtPassword);
-        chkLockScreen = findViewById(R.id.chkLockScreen);
-        txtReminder = findViewById(R.id.txtReminder);
-        btnSave = findViewById(R.id.btnSave);
-        btnShow = findViewById(R.id.btnShow);
+        txtPassword = (EditText)findViewById(R.id.txtPassword);
+        chkLockScreen = (CheckBox) findViewById(R.id.chkLockScreen);
+        txtReminder = (EditText)findViewById(R.id.txtReminder);
+        btnSave = (Button)findViewById(R.id.btnSave);
+        btnShow = (Button)findViewById(R.id.btnShow);
 
 
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SharedPreferences sharedPreferences = getSharedPreferences("preference",MainActivity.this.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences("preference",MainActivity.this.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.putString("Password", txtPassword.getText().toString());
                 editor.putString("Reminder", txtReminder.getText().toString());
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
                             String strReminder="Not Set";
                             Boolean blnScreenLock = false;
 
-                            SharedPreferences sharedPreferences = getSharedPreferences("preference",MainActivity.this.MODE_PRIVATE);
+                            SharedPreferences sharedPreferences = MainActivity.this.getSharedPreferences("preference",MainActivity.this.MODE_PRIVATE);
                             if (savedInstanceState.containsKey("Password"))
                                 strPassword = sharedPreferences.getString("Password","Not Set");
                             if (savedInstanceState.containsKey("Reminder"))
