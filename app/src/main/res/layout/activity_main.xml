@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:layout_editor_absoluteY="81dp">
+
+        <TextView
+            android:id="@+id/lblSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:textSize="30sp" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/lblPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Password"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Set your password"
+            android:textSize="15sp" />
+
+        <View
+            android:id="@+id/divider2"
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="?android:attr/listDivider" />
+
+        <TextView
+            android:id="@+id/txtSecuritySettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Security Settings"
+            android:textSize="20sp" />
+
+        <CheckBox
+            android:id="@+id/chkLockScreen"
+            android:layout_width="match_parent"
+            android:layout_height="32dp"
+            android:layoutDirection="rtl"
+            android:text="Lock the screen with password"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/lblReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reminder for updation"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/txtReminder"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Set update reminder frequency"
+            android:inputType="textPersonName"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="Save Preferences" />
+
+        <Button
+            android:id="@+id/btnShow"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Show Preferences" />
+
+
+</LinearLayout>
